@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_count_putstr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maamaral <maamaral@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 16:17:29 by maamaral          #+#    #+#             */
-/*   Updated: 2025/10/20 20:46:16 by maamaral         ###   ########.fr       */
+/*   Created: 2025/10/20 21:05:27 by maamaral          #+#    #+#             */
+/*   Updated: 2025/10/20 21:09:42 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libftprintf.h"
 
-int	ft_printf(char *s, ...)
+int	ft_count_putstr(char *s)
 {
-	va_list	args;
-	char	c;
-	int	total;
-	
-	va_start(args, s);
+	int	i;
+
+	i = 0;
 	while (*s)
 	{
-		if (*s == '%')
-		{
-			s++;
-			c = *s;
-			ft_write_params(c, args);
-			s++;
-		}
-		write(1, &*s, 1);
-		total++;
+		i += ft_count_putchar(*s);
 		s++;
 	}
-	va_end(args);
+	return (i);
 }

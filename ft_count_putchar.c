@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_writeparams.c                                   :+:      :+:    :+:   */
+/*   ft_count_putchar.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maamaral <maamaral@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 16:17:12 by maamaral          #+#    #+#             */
-/*   Updated: 2025/10/20 20:48:48 by maamaral         ###   ########.fr       */
+/*   Created: 2025/10/20 21:03:13 by maamaral          #+#    #+#             */
+/*   Updated: 2025/10/20 21:05:00 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libftprintf.h"
 
-int	ft_writeparams(char c, va_list args)
+int	ft_count_putchar(c)
 {
-	int	total;
-
-	total = 0;
-	if (c == 'c')
-		return (ft_count_putchar(args));
-	if (c == 's')
-		return (ft_count_putstr(args));
-	if (c == 'p')
-		return (ft_count_putnull(args));
-	if (c == 'd' || c == 'i')
-		return (ft_count_putnbr(args));
-	if (c == 'u')
-		return (ft_count_unsputnr(args));
-	if (c == 'x' || c == 'X')
-		return (ft_count_putnbrhex(args));
-	if (c == '%')
-		write(1, &c, 1);
+	write(1, &c, 1);
 	return (1);
-}	
+}

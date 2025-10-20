@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_count_unsputnbr.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maamaral <maamaral@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 16:17:29 by maamaral          #+#    #+#             */
-/*   Updated: 2025/10/20 20:46:16 by maamaral         ###   ########.fr       */
+/*   Created: 2025/10/20 21:31:49 by maamaral          #+#    #+#             */
+/*   Updated: 2025/10/20 21:36:35 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libftprintf.h"
 
-int	ft_printf(char *s, ...)
+int	ft_count_unsputnbr(unsigned int n)
 {
-	va_list	args;
+	long	num;
 	char	c;
-	int	total;
-	
-	va_start(args, s);
-	while (*s)
-	{
-		if (*s == '%')
-		{
-			s++;
-			c = *s;
-			ft_write_params(c, args);
-			s++;
-		}
-		write(1, &*s, 1);
-		total++;
-		s++;
-	}
-	va_end(args);
+	int	count;
+
+	num = n;
+	c = '0';
+	count = 0;
+	if (num >= 10)
+		count += ft_count_unsputnbr(num / 10);
+	c = (num % 10) + '0';
+	count += ft_count_putchar(c);
+	return (count);
 }

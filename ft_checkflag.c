@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_writeparams.c                                   :+:      :+:    :+:   */
+/*   ft_checkflag.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maamaral <maamaral@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 16:17:12 by maamaral          #+#    #+#             */
-/*   Updated: 2025/10/20 20:48:48 by maamaral         ###   ########.fr       */
+/*   Created: 2025/10/20 20:03:52 by maamaral          #+#    #+#             */
+/*   Updated: 2025/10/20 21:30:51 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libftprintf.h"
 
-int	ft_writeparams(char c, va_list args)
+va_list	ft_checkflag(char c, va_list l)
 {
-	int	total;
-
-	total = 0;
 	if (c == 'c')
-		return (ft_count_putchar(args));
+		va_arg(l, char);
 	if (c == 's')
-		return (ft_count_putstr(args));
+		va_arg(l, char *);
 	if (c == 'p')
-		return (ft_count_putnull(args));
-	if (c == 'd' || c == 'i')
-		return (ft_count_putnbr(args));
+		va_arg(l, void *);
+	if (c == 'd' || c == 'i' || c == 'x' || c == 'X')
+		va_arg(l, int);
 	if (c == 'u')
-		return (ft_count_unsputnr(args));
-	if (c == 'x' || c == 'X')
-		return (ft_count_putnbrhex(args));
-	if (c == '%')
-		write(1, &c, 1);
-	return (1);
-}	
+		va_arg(l, unsigned int);
+}
