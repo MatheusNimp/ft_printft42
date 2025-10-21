@@ -12,7 +12,7 @@ CFLAGS = -Wall -Wextra -Werror
 # Sources
 SRCS = ft_printf.c ft_writeparams.c ft_count_putchar.c \
        ft_count_putstr.c ft_count_putnbr.c ft_count_unsputnbr.c \
-       ft_count_putnbrhex.c ft_count_putptr.c ft_helpers.c
+       ft_count_putnbrhex.c ft_count_putptr.c ft_aux.c
 OBJS = $(SRCS:.c=.o)
 # ---------------------------------------------------------------------------- #
 #                                    RULES                                     #
@@ -21,7 +21,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-%.o: %.c libftprintf.h
+%.o: %.c ft_printf.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

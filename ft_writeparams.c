@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_writeparams.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: maamaral <maamaral@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 16:17:12 by maamaral          #+#    #+#             */
-/*   Updated: 2025/10/21 11:45:04 by marvin           ###   ########.fr       */
+/*   Created: 2025/10/21 18:24:26 by maamaral          #+#    #+#             */
+/*   Updated: 2025/10/21 18:24:42 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_writeparams(const char c, va_list *arg)
 {

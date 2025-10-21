@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: maamaral <maamaral@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 16:17:29 by maamaral          #+#    #+#             */
-/*   Updated: 2025/10/21 11:45:49 by marvin           ###   ########.fr       */
+/*   Created: 2025/10/21 18:22:38 by maamaral          #+#    #+#             */
+/*   Updated: 2025/10/21 18:22:45 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_printf(const char *s, ...)
 {
 	va_list	args;
 	char	c;
-	int	total;
+	int		total;
 
 	total = 0;
 	va_start(args, s);

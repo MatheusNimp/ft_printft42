@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_count_putchar.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maamaral <maamaral@student.42porto.co      +#+  +:+       +#+        */
+/*   By: maamaral <maamaral@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 21:03:13 by maamaral          #+#    #+#             */
-/*   Updated: 2025/10/20 21:05:00 by maamaral         ###   ########.fr       */
+/*   Updated: 2025/10/21 15:49:50 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-int	ft_count_putchar(c)
+int	ft_count_putchar(int c)
 {
 	write(1, &c, 1);
 	return (1);

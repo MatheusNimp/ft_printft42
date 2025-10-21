@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_aux.c                                           :+:      :+:    :+:   */
+/*   ft_count_putnbrhex.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maamaral <maamaral@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 18:18:59 by maamaral          #+#    #+#             */
-/*   Updated: 2025/10/21 18:19:27 by maamaral         ###   ########.fr       */
+/*   Created: 2025/10/21 16:12:37 by maamaral          #+#    #+#             */
+/*   Updated: 2025/10/21 20:18:44 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-int	ft_strlen(const char *s)
+int	ft_count_putnbrhex(unsigned long n, char c)
 {
-	int	i;
+	char	*base;
+	int		count;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-int	ft_islower(int c)
-{
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	return (0);
+	count = 0;
+	if (ft_islower(c))
+		base = "0123456789abcdef";
+	else
+		base = "0123456789ABCDEF";
+	if (n >= 16)
+		count += ft_count_putnbrhex(n / 16, c);
+	count += ft_count_putchar(base[n % 16]);
+	return (count);
 }

@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_count_putstr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: maamaral <maamaral@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 21:05:27 by maamaral          #+#    #+#             */
-/*   Updated: 2025/10/21 10:26:12 by marvin           ###   ########.fr       */
+/*   Created: 2025/10/21 18:21:25 by maamaral          #+#    #+#             */
+/*   Updated: 2025/10/21 19:55:20 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include "ft_printf.h"
 
 int	ft_count_putstr(char *s)
 {
 	int	i;
 
-	i = write(1, s, ft_strlen(s + 1));
+	if (!(s))
+		return (write(1, "(null)", 6));
+	i = write(1, s, ft_strlen(s));
 	return (i);
 }

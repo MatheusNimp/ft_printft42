@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_count_unsputnbr.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maamaral <maamaral@student.42porto.co      +#+  +:+       +#+        */
+/*   By: maamaral <maamaral@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 21:31:49 by maamaral          #+#    #+#             */
-/*   Updated: 2025/10/20 21:36:35 by maamaral         ###   ########.fr       */
+/*   Updated: 2025/10/21 15:55:46 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_count_unsputnbr(unsigned int n)
 {
 	long	num;
 	char	c;
-	int	count;
+	int		count;
 
 	num = n;
 	c = '0';

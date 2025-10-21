@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_count_putnbr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maamaral <maamaral@student.42porto.co      +#+  +:+       +#+        */
+/*   By: maamaral <maamaral@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 21:10:08 by maamaral          #+#    #+#             */
-/*   Updated: 2025/10/20 21:25:10 by maamaral         ###   ########.fr       */
+/*   Updated: 2025/10/21 15:55:28 by maamaral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_count_putnbr(int n)
 {
 	long	num;
 	char	c;
-	int	count;
+	int		count;
 
 	num = n;
 	c = '0';
